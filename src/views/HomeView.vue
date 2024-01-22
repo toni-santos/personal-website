@@ -120,20 +120,15 @@ onMounted(() => {
     })
     box.value.mesh.material.needsUpdate = true
   })
-
-  renderer.value.onBeforeRender(() => {
-    box.value.mesh.rotation.y += 0.01
-  })
 })
 </script>
 
 <template>
-  <section class="flex flex-row flex-wrap min-h-screen min-w-screen items-center justify-between">
-    <div class="flex flex-col gap-4 w-1/3">
+  <section class="flex flex-row flex-wrap min-h-screen min-w-screen items-center justify-between max-sm:flex-col max-sm:justify-center">
+    <div class="flex flex-col gap-4 w-1/3 max-sm:w-full">
       <h1 class="text-4xl">toni-santos</h1>
       <div>
         <RouterLink to="/projects" class="text-primary">projects</RouterLink> |
-        <RouterLink to="/about" class="text-secondary">about</RouterLink> |
         <RouterLink to="/cv" class="text-accent">cv</RouterLink>
       </div>
       <p class="w-fit">

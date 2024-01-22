@@ -4,15 +4,13 @@ import { RouterLink } from 'vue-router'
 const routes = [
   {
     path: '/projects',
-    name: 'projects'
-  },
-  {
-    path: '/about',
-    name: 'about'
+    name: 'projects',
+    color: 'text-primary'
   },
   {
     path: '/cv',
-    name: 'cv'
+    name: 'cv',
+    color: 'text-accent'
   }
 ]
 </script>
@@ -23,7 +21,7 @@ const routes = [
       <RouterLink to="/" class="text-xl">toni-santos</RouterLink>
       <div class="flex flex-row gap-4">
         <template v-for="route in routes" :key="route">
-          <RouterLink :to="route.path" :class="$route.name === route.name ? 'text-primary' : ''">{{
+          <RouterLink :to="route.path" :class="$route.name === route.name ? route.color : ''">{{
             route.name
           }}</RouterLink>
         </template>

@@ -217,13 +217,13 @@ const techList = [
     /></a>
   </h1>
   <img class="absolute top-0 right-0 -z-10" src="/corner.svg" alt="" />
-  <div class="flex flex-col self-center w-3/5 um">
-    <section class="flex flex-row gap-10 items-center p-5 flex-wrap">
+  <div class="flex flex-col self-center w-3/5 um max-lg:w-4/5">
+    <section class="flex flex-row gap-10 items-center p-5 flex-wrap max-lg:justify-center">
       <img src="/me.jpg" class="w-52 h-52 object-cover object-right shadow-xl" />
       <CVSection title="António Santos" :elements="intro" :main="true" />
     </section>
-    <section class="flex flex-row justify-between items-center flex-wrap">
-      <div class="tnr w-2/3 bg-white text-black p-4 overflow-y-scroll shadow-xl">
+    <section class="flex flex-row justify-between items-center flex-wrap max-lg:justify-center gap-4">
+      <div class="tnr w-2/3 bg-white text-black p-4 overflow-y-scroll shadow-xl max-lg:w-full">
         <h2 class="font-bold mb-2 text-xl">About Me</h2>
         A developer at work with the heart of a user, nothing makes me more satisfied than seeing
         people interact with my creations! From a lover of the Internet, and all of the cool things
@@ -241,7 +241,7 @@ const techList = [
         <p>*/</p>
       </div>
     </section>
-    <section class="flex flex-row p-5 justify-between">
+    <section class="flex flex-row p-5 justify-between flex-wrap max-lg:gap-10 max-xl:justify-center">
       <div class="flex flex-col gap-10 justify-center">
         <CVSection title="@education" :elements="education" :main="true" />
         <CVSection title="@experience" :elements="experience" :main="true" />
