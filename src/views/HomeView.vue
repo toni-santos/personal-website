@@ -8,6 +8,7 @@ const currentlyPlaying = ref(null)
 const box = ref(null)
 const renderer = ref(null)
 const colors = ref(null)
+const nowPlaying = ref(true)
 const c1 = ref(null)
 const c2 = ref(null)
 const c3 = ref(null)
@@ -109,6 +110,7 @@ onMounted(() => {
         currentlyPlaying.value.items[
           MathUtils.randInt(0, currentlyPlaying.value.items.length - 1)
         ].track
+      nowPlaying.value = false
     } else {
       currentlyPlaying.value = await response.json()
       currentlyPlaying.value = currentlyPlaying.value.item
@@ -148,17 +150,17 @@ onMounted(() => {
           </Mesh>
         </Scene>
       </Renderer>
-      <h1>{{ currentlyPlaying?.name }}</h1>
-      <h2>{{ currentlyPlaying?.artists[0].name }} - {{ currentlyPlaying?.album.name }}</h2>
+      <h1 class="max-w-80 text-right">{{ currentlyPlaying?.name }}</h1>
+      <h2 class="max-w-80 text-right">{{ currentlyPlaying?.artists[0].name }} - {{ currentlyPlaying?.album.name }}</h2>
     </div>
 
     <section class="absolute bottom-0 left-1/2 -translate-x-1/2 pb-5">
-      <a href=""><v-icon :scale="1.5" name="si-linkedin" /></a> |
-      <a href=""><v-icon :scale="1.5" name="si-github" /></a>
+      <a target="_blank" href="https://www.linkedin.com/in/toni-santos/"><v-icon :scale="1.5" name="si-linkedin" /></a> |
+      <a target="_blank" href="https://github.com/toni-santos"><v-icon :scale="1.5" name="si-github" /></a>
     </section>
   </section>
 
-  <div class="absolute right-0 top-1/2 -translate-y-1/2 flex translate-x-4 flex-col h-full">
+  <div v-if="nowPlaying" class="absolute right-0 top-1/2 -translate-y-1/2 flex translate-x-4 flex-col h-full">
     <div ref="c1" class="absolute min-w-4 min-h-4"></div>
     <div ref="c2" class="absolute min-w-4 min-h-4"></div>
     <div ref="c3" class="absolute min-w-4 min-h-4"></div>

@@ -147,7 +147,45 @@ const projects = [
     link: 'https://www.sinf.pt/'
   }),
   h(CVSection, {
-    title: '#search-engine',
+    title: '#personal-website',
+    elements: [
+      {
+        key: 'description',
+        value: 'personal website'
+      },
+      {
+        key: 'context',
+        value: 'personal project'
+      },
+      {
+        key: 'stack',
+        value: 'Vue Tailwind'
+      }
+    ],
+    main: false,
+    link: 'https://toni-santos.pt/'
+  }),
+  h(CVSection, {
+    title: '#zapp',
+    elements: [
+      {
+        key: 'description',
+        value: 'local-first replicated shopping list'
+      },
+      {
+        key: 'context',
+        value: 'course unit project'
+      },
+      {
+        key: 'stack',
+        value: 'Sveltekit Nginx Spring_Boot'
+      }
+    ],
+    main: false,
+    link: 'https://zapp.toni-santos.pt/'
+  }),
+  h(CVSection, {
+    title: '#diseases',
     elements: [
       {
         key: 'description',
@@ -163,26 +201,7 @@ const projects = [
       }
     ],
     main: false,
-    link: 'https://github.com/toni-santos/feup-pri-2023'
-  }),
-  h(CVSection, {
-    title: '#out-of-the-breach',
-    elements: [
-      {
-        key: 'description',
-        value: 'clone/demake of Into the Breach'
-      },
-      {
-        key: 'context',
-        value: 'course unit project'
-      },
-      {
-        key: 'stack',
-        value: 'Java Lanterna Mockito'
-      }
-    ],
-    main: false,
-    link: 'https://github.com/toni-santos/ldts-proj'
+    link: 'https://diseases.toni-santos.pt/'
   })
 ]
 
@@ -212,7 +231,7 @@ const techList = [
 <template>
   <h1 class="text-3xl text-center my-10">
     cv
-    <a class="btn-circle" href="/me.jpg" download="test.jpg"
+    <a class="btn-circle" href="/antonio_santos_cv.pdf" download="antonio_santos_cv.pdf"
       ><v-icon name="io-download" scale="1.25"
     /></a>
   </h1>

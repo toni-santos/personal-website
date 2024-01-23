@@ -8,8 +8,8 @@ const projects = [
     technologies: ['Vue', 'TailwindCSS', 'Three.js'],
     tags: ['Personal', 'Web'],
     image: '',
-    github: '',
-    link: ''
+    github: 'https://github.com/toni-santos/personal-website',
+    link: 'https://toni-santos.pt/'
   },
   {
     title: 'Terminal-like Website',
@@ -18,7 +18,7 @@ const projects = [
     tags: ['Personal', 'Web'],
     image: '/project_images/personal1.png',
     github: 'https://github.com/toni-santos/toni-santos.github.io/tree/files',
-    link: ''
+    link: 'https://terminal.toni-santos.pt/'
   },
   {
     title: 'Earworm',
@@ -27,7 +27,7 @@ const projects = [
     tags: ['University', 'Web'],
     image: '/project_images/earworm.png',
     github: 'https://github.com/toni-santos/lbaw-earworm',
-    link: ''
+    link: 'https://earworm.toni-santos.pt/'
   },
   {
     title: 'ZAPP',
@@ -36,7 +36,7 @@ const projects = [
     tags: ['University', 'Web', 'Programming'],
     image: '/project_images/zapp.png',
     github: 'https://github.com/toni-santos/zapp-sdle-2023',
-    link: ''
+    link: 'https://zapp.toni-santos.pt/'
   },
   {
     title: 'FEUPZero',
@@ -45,7 +45,7 @@ const projects = [
     tags: ['University', 'Game'],
     image: '/project_images/feup0.png',
     github: 'https://github.com/toni-santos/sgi-2023/tree/main/tp3',
-    link: ''
+    link: 'https://feupzero.toni-santos.pt/'
   },
   {
     title: 'Diseases Search Engine',
@@ -54,7 +54,7 @@ const projects = [
     tags: ['University', 'Web'],
     image: '/project_images/diseases.png',
     github: 'https://github.com/toni-santos/feup-pri-2023',
-    link: ''
+    link: 'https://diseases.toni-santos.pt/'
   },
   {
     title: 'Multiplayer Game',
@@ -81,7 +81,7 @@ const projects = [
     tags: ['University', 'Game', 'Web'],
     image: '/project_images/bird.png',
     github: 'https://github.com/toni-santos/cg-2023/tree/master/project',
-    link: ''
+    link: 'https://bird.toni-santos.pt/'
   },
   {
     title: 'Out of the Breach',
