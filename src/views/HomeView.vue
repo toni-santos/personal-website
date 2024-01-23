@@ -123,10 +123,16 @@ onMounted(() => {
     box.value.mesh.material.needsUpdate = true
   })
 })
+
+renderer.value.onBeforeRender(() => {
+  box.value.mesh.rotation.y += 0.01
+})
 </script>
 
 <template>
-  <section class="flex flex-row flex-wrap min-h-screen min-w-screen items-center justify-between max-sm:flex-col max-sm:justify-center">
+  <section
+    class="flex flex-row flex-wrap min-h-screen min-w-screen items-center justify-between max-sm:flex-col max-sm:justify-center"
+  >
     <div class="flex flex-col gap-4 w-1/3 max-sm:w-full">
       <h1 class="text-4xl">toni-santos</h1>
       <div>
@@ -151,16 +157,26 @@ onMounted(() => {
         </Scene>
       </Renderer>
       <h1 class="max-w-80 text-right">{{ currentlyPlaying?.name }}</h1>
-      <h2 class="max-w-80 text-right">{{ currentlyPlaying?.artists[0].name }} - {{ currentlyPlaying?.album.name }}</h2>
+      <h2 class="max-w-80 text-right">
+        {{ currentlyPlaying?.artists[0].name }} - {{ currentlyPlaying?.album.name }}
+      </h2>
     </div>
 
     <section class="absolute bottom-0 left-1/2 -translate-x-1/2 pb-5">
-      <a target="_blank" href="https://www.linkedin.com/in/toni-santos/"><v-icon :scale="1.5" name="si-linkedin" /></a> |
-      <a target="_blank" href="https://github.com/toni-santos"><v-icon :scale="1.5" name="si-github" /></a>
+      <a target="_blank" href="https://www.linkedin.com/in/toni-santos/"
+        ><v-icon :scale="1.5" name="si-linkedin"
+      /></a>
+      |
+      <a target="_blank" href="https://github.com/toni-santos"
+        ><v-icon :scale="1.5" name="si-github"
+      /></a>
     </section>
   </section>
 
-  <div v-if="nowPlaying" class="absolute right-0 top-1/2 -translate-y-1/2 flex translate-x-4 flex-col h-full">
+  <div
+    v-if="nowPlaying"
+    class="absolute right-0 top-1/2 -translate-y-1/2 flex translate-x-4 flex-col h-full"
+  >
     <div ref="c1" class="absolute min-w-4 min-h-4"></div>
     <div ref="c2" class="absolute min-w-4 min-h-4"></div>
     <div ref="c3" class="absolute min-w-4 min-h-4"></div>

@@ -28,7 +28,10 @@ const routes = [
       </div>
     </div>
     <div class="">
-      <a target="_blank" href="https://www.linkedin.com/in/toni-santos/"><v-icon name="si-linkedin" /></a> |
+      <a target="_blank" href="https://www.linkedin.com/in/toni-santos/"
+        ><v-icon name="si-linkedin"
+      /></a>
+      |
       <a target="_blank" href="https://github.com/toni-santos"><v-icon name="si-github" /></a>
     </div>
   </nav>
