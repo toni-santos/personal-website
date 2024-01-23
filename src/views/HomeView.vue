@@ -122,11 +122,13 @@ onMounted(() => {
     })
     box.value.mesh.material.needsUpdate = true
   })
+
+  renderer.value.onBeforeRender(() => {
+    box.value.mesh.rotation.y += 0.01
+  })
 })
 
-renderer.value.onBeforeRender(() => {
-  box.value.mesh.rotation.y += 0.01
-})
+
 </script>
 
 <template>
