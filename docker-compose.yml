@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  personal:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3000:4173

@@ -13,8 +13,8 @@ const intro = [
   },
   {
     key: 'website',
-    value: 'toni-santos.github.io',
-    link: 'https://toni-santos.github.io/'
+    value: 'toni-santos.pt',
+    link: 'https://toni-santos.pt/'
   },
   {
     key: 'linkedin',
