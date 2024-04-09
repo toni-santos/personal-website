@@ -1,7 +1,8 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { DoubleSide, MathUtils, MeshBasicMaterial, TextureLoader } from 'three'
-import { getNowPlaying, getRecentlyPlayed } from '../api/SpotifyAPI.js'
+// import { getNowPlaying, getRecentlyPlayed } from '../api/SpotifyAPI.js'
+import { getRecentTracks } from '../api/LastfmAPI.js'
 import ColorThief from 'colorthief'
 
 const currentlyPlaying = ref(null)
@@ -102,22 +103,14 @@ onMounted(() => {
     opacity: 0
   })
 
-  getNowPlaying().then(async (response) => {
-    if (response.status !== 200) {
-      const res = await getRecentlyPlayed()
-      currentlyPlaying.value = await res.json()
-      currentlyPlaying.value =
-        currentlyPlaying.value.items[
-          MathUtils.randInt(0, currentlyPlaying.value.items.length - 1)
-        ].track
-      nowPlaying.value = false
-    } else {
-      currentlyPlaying.value = await response.json()
-      currentlyPlaying.value = currentlyPlaying.value.item
-    }
-    processColor(currentlyPlaying?.value.album.images[0].url)
+  getRecentTracks().then(async (response) => {
+    console.log(response);
+    currentlyPlaying.value = response
+    processColor(currentlyPlaying?.value.image[2]['#text'])
+    nowPlaying.value = true
+    
     box.value.mesh.material = new MeshBasicMaterial({
-      map: new TextureLoader().load(currentlyPlaying?.value.album.images[0].url),
+      map: new TextureLoader().load(currentlyPlaying?.value.image[2]['#text']),
       side: DoubleSide
     })
     box.value.mesh.material.needsUpdate = true
@@ -158,9 +151,9 @@ onMounted(() => {
           </Mesh>
         </Scene>
       </Renderer>
-      <h1 class="max-w-80 text-right">{{ currentlyPlaying?.name }}</h1>
+      <a :href="currentlyPlaying?.url" target="_blank" class="max-w-80 text-right">{{ currentlyPlaying?.name }}</a>
       <h2 class="max-w-80 text-right">
-        {{ currentlyPlaying?.artists[0].name }} - {{ currentlyPlaying?.album.name }}
+        {{ currentlyPlaying?.artist['#text'] }} - {{ currentlyPlaying?.album['#text'] }}
       </h2>
     </div>
 
