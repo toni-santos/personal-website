@@ -104,7 +104,6 @@ onMounted(() => {
   })
 
   getRecentTracks().then(async (response) => {
-    console.log(response);
     currentlyPlaying.value = response
     processColor(currentlyPlaying?.value.image[2]['#text'])
     nowPlaying.value = true
